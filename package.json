@@ -5,12 +5,24 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "lint:js": "eslint --ext .ts,.vue --ignore-path .gitignore .",
+    "lint:prettier": "prettier --ignore-path .gitignore --check .",
+    "lint": "yarn lint:js && yarn lint:prettier",
+    "lint:fix": "prettier --ignore-path .gitignore --write . && yarn lint:js --fix",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
     "@types/node": "^18.17.1",
-    "nuxt": "^3.6.5"
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "nuxt": "^3.6.5",
+    "prettier": "^3.0.1",
+    "typescript": "^5.1.6"
   }
 }
